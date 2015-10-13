@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{% include head.html %}
+{% include "head.html" %}
 
 <body>
 
-    {% include nav.html %}
+    {% include "nav.html" %}
 
-    {{ content }}
+    {% block base_content %}
+    {% endblock %}
 
-    {% include footer.html %}
+    {% include "footer.html" %}
 
 </body>
 
