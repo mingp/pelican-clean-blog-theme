@@ -1,0 +1,2 @@
+# pelican-clean-blog-theme
+
