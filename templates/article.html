@@ -1,14 +1,26 @@
 {% extends "base.html" %}
 
-{% block base_content %}
+{% block title %}
+{{ article.title }} - {{ SITENAME }}
+{% endblock %}
 
-{% set header_heading_class = "post-heading" %}
-{% set header_title = article.title %}
-{% set header_subtitle = article.subtitle %}
-{% set header_text %}
-    Posted by {{ article.author }} on {{ article.locale_date }}
-{% endset %}
-{% include "header.html" %}
+{% block header_heading_css_class %}
+post-heading
+{% endblock %}
+
+{% block header_title %}
+{{ article.title }}
+{% endblock %}
+
+{% block header_subtitle %}
+{{ article.subtitle }}
+{% endblock %}
+
+{% block header_text %}
+Posted by {{ article.author }} on {{ article.locale_date }}
+{% endblock %}
+
+{% block base_content %}
 
 <!-- Post Content -->
 <article>
@@ -25,4 +37,4 @@
 
 <hr>
 
-{% endblock %}
+{% endblock base_content %}
