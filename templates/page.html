@@ -2,26 +2,9 @@
 
 {% block base_content %}
 
-<!-- Page Header -->
-<header class="intro-header"
-        {% block header_background_image %}
-            style="background-image: url('{{ SITEURL }}/theme/img/home-bg.jpg');"
-        {% endblock %}
-        >
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>{% block page_title %}{{ SITENAME }}{% endblock %}</h1>
-                    <hr class="small">
-                    <span class="subheading">
-                        {% block page_subtitle %}{% endblock %}
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+{% block header %}
+    {% include "header.html" %}
+{% endblock %}
 
 <!-- Main Content -->
 <div class="container">
