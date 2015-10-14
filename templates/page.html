@@ -2,9 +2,10 @@
 
 {% block base_content %}
 
-{% block header %}
-    {% include "header.html" %}
-{% endblock %}
+{% set header_heading_class = "site-heading" %}
+{% set header_title = page.title %}
+{% set header_subtitle = page.subtitle %}
+{% include "header.html" %}
 
 <!-- Main Content -->
 <div class="container">

@@ -2,6 +2,12 @@
 
 {% block base_content %}
 
+{% set header_heading_class = "post-heading" %}
+{% set header_title = article.title %}
+{% set header_subtitle = article.subtitle %}
+{% set header_text %}
+    Posted by {{ article.author }} on {{ article.locale_date }}
+{% endset %}
 {% include "header.html" %}
 
 <!-- Post Content -->
