@@ -1,24 +1,39 @@
-{% extends "page.html" %}
+{% extends "base.html" %}
 
-{% block page_content %}
+{% block base_content %}
 
-{% for article in articles_page.object_list %}
-<div class="post-preview">
-    <a href="{{ SITEURL }}/{{ article.url }}">
-        <h2 class="post-title">{{ article.title }}</h2>
-        {% if article.subtitle %}
-            <h3 class="post-subtitle">
-                {{ article.subtitle }}
-            </h3>
-        {% endif %}
-    </a>
-    <p class="post-meta">
-        Posted by {{ article.author }} on {{ article.locale_date }}
-    </p>
+{% block header %}
+{% include "header.html" %}
+{% endblock %}
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            {% for article in articles_page.object_list %}
+            <div class="post-preview">
+                <a href="{{ SITEURL }}/{{ article.url }}">
+                    <h2 class="post-title">{{ article.title }}</h2>
+                    {% if article.subtitle %}
+                    <h3 class="post-subtitle">
+                        {{ article.subtitle }}
+                    </h3>
+                    {% endif %}
+                </a>
+                <p class="post-meta">
+                    Posted by {{ article.author }} on {{ article.locale_date }}
+                </p>
+            </div>
+            <hr>
+            {% endfor %}
+
+            {% include "paginator.html" %}
+
+        </div>
+    </div>
 </div>
+
 <hr>
-{% endfor %}
 
-{% include "paginator.html" %}
-
-{% endblock page_content %}
+{% endblock base_content %}
